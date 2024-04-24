@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paint</title>
+</head>
+<body>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        .key {
+            aspect-ratio: 1/1;
+            width: 2rem;
+            font-size: 1rem;
+            display: grid;
+            place-items: center;
+            color: #fff
+        }
+        #size {
+            position: fixed;
+            top: 0; right: 0;
+
+            font-size: 1.5rem;
+            border-radius: 0px 0 0 10px;
+            background-color: rgb(162, 162, 162);
+            box-sizing: border-box;
+            padding: .5rem .8rem;
+
+            opacity: 1;
+            transition: .3s opacity ease;
+        }
+
+        canvas {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    
+    <div style="position: fixed; top: 0; left: 0; border-radius: 0px 0 10px 0; display: flex; z-index: 1;">
+        <div class="key" style="background: red;">1</div>
+        <div class="key" style="background: blue;">2</div>
+        <div class="key" style="background: yellow; color: #000">3</div>
+        <div class="key" style="background: purple;">4</div>
+        <div class="key" style="background: orange;">5</div>
+        <div class="key" style="background: green;">6</div>
+        <div class="key" style="background: #000;">`</div>
+        <div class="key" style="background: #000;">0</div>
+        <div class="key" style="background: #fff; color: #000">w</div>
+
+        <div class="key" style="background: #eee; color: #000">=</div>
+        <div class="key" style="background: #eee; color: #000">-</div>
+        <div class="key" style="background: red;">c</div>
+        <div class="key" title="size">
+            <svg fill="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse"><rect x="5" y="2" width="14" height="20" rx="7"/><path d="M12 6v4"/></svg>
+        </div>
+    </div>
+    <div id="size"></div>
+
+    <canvas id="cvs"></canvas>
+
+    <script src="./app.js"></script>
+</body>
+</html>
